@@ -1,10 +1,17 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
+import AddNews from './components/AddNews'
+import ListNews from './components/ListNews';
+import GlobalStyle from './style/globalStyle'
 
 function App() {
   return (
-    <div>
-      Hello React
-    </div>
+    <Provider store={store}>
+      <GlobalStyle />
+      <AddNews />
+      <ListNews />
+    </Provider>
   );
 }
 
