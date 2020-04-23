@@ -1,16 +1,13 @@
-export function formRequest(id, titulo, conteudo) {
+export function formRequest(data) {
   return {
     type: "FORM_REQUEST",
-    payload: {
-      id,
-      titulo,
-      conteudo,
-      publicacao
+    payload: {     
+      data 
     }     
   }
 }
- 
-export function formSuccess() {
+
+export function formRequestSuccess() {
   return {
     type: "FORM_REQUEST_SUCCESS",    
   }

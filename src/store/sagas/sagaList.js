@@ -6,7 +6,7 @@ import { listSuccess, listFailure } from "../actions/actionList";
 export function* listNews() {
   try { 
     const response = yield call(api.get, "crud?sortBy=publicacao&order=desc");
-    const[...news] = response.data
+    const[...news] = response.data    
 
     yield put(listSuccess(news));  
     }    

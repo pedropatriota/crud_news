@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
             width: 50%; 
         }
         @media only screen and (min-width: 1200px){
-            width: 30%; 
+            width: 40%; 
         }        
         input{
             margin: 10px 0;
@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
             }
         }
         textarea{
-            height: 80px;
+            height: 120px;
             width: 100%;
             border: 1px solid #cdcdcd;
             border-radius: 5px;
@@ -58,7 +58,7 @@ export const Wrapper = styled.div`
             border-radius: 5px;
             margin: 20px 0;
             &:hover{
-                background: #5c88e0;
+                background: #5d88de;
             }
         }
     }

@@ -23,7 +23,7 @@ html, body, #root {
   }
 
   body, input, button {
-    font: 14px 'Roboto', sans-serif;
+    font: 13px 'Roboto', sans-serif;
   }
 
   a {

@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   news:[],
-  index: ''   
+  index: ''  
 };
  
 export default function listNews(state = INITIAL_STATE, action) {
@@ -9,12 +9,13 @@ export default function listNews(state = INITIAL_STATE, action) {
       return{
         ...state,
         news: action.payload
-      };  
+      };
+
     case 'LIST_DELETE':        
-        return {
-          ...state,
-          news: state.news.filter(item => item.id != action.payload.index)
-        }        
+      return {
+        ...state,
+        news: state.news.filter(item => item.id !== action.payload.index)
+      };    
               
     default:
       return state;

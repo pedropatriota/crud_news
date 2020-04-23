@@ -1,46 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { formRequest } from '../../store/actions/actionForm'
-import { Wrapper } from './style'
-import api from '../../services/api'
+import { formRequest } from '../../store/actions/actionForm';
+import { Form, Input } from '@rocketseat/unform';
+import { Wrapper } from './style';
 
 const AddNews = ()=> {
-    const[state, setState]= useState({
-        titulo:'',
-        conteudo:'',
-        publicacao: new Date().toLocaleString(),
-    })
+    const dispatch = useDispatch()
 
-    const handleChange = (event) => {
-        const Values = { ...state };
-        Values[event.target.name] = event.target.value;
-        setState(Values);        
-    }  
-      
-    // const handleSubmit = async (event)=>{
-    //     event.preventDefault()
-    //     await api.post('crud', {
-    //        titulo: state.titulo,
-    //        conteudo: state.conteudo,
-    //        publicacao: state.publicacao, 
-    //     })
-    //     window.location.reload()           
-    // }   
-
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-
-    }
+    function handleSubmit(data) {
+        dispatch(formRequest(data));               
+      }
 
     return(
         <Wrapper>
             <h2>Adicione sua Notícia</h2>
-            <form onSubmit={handleSubmit}>
-                <input name='titulo' type='text' placeholder='Título' value={state.titulo} onChange={handleChange}></input>
-                <textarea name='conteudo' placeholder='Conteúdo...' value={state.conteudo} onChange={handleChange}></textarea>
-                <input name='data' type='text'value={state.publicacao} disabled></input>
+            <Form onSubmit={handleSubmit}>
+                <Input name='titulo' type='text' placeholder='Título' />
+                <Input multiline="true" type='textarea'  name='conteudo'  placeholder='Conteúdo...'/>
+                <Input name='publicacao' type='text' value={new Date().toLocaleString()} disabled />
                 <button type='submit'>ADICIONAR</button>
-            </form>
+            </Form>
         </Wrapper>
     )
 }

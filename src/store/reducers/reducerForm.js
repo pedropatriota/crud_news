@@ -1,16 +1,12 @@
 const INITIAL_STATE ={
-    titulo: '',
-    conteudo: '',
-    publicacao: new Date().toLocaleString(),
+  data:{}  
 }
 
-const newsForm = (state = INITIAL_STATE, action) =>{
+export default function newsForm(state = INITIAL_STATE, action){
     switch(action.type){
-        case 'FORM_REQUEST_SUCCESS':
-          return {
-            id: action.payload.id,
-            titulo: action.payload.titulo,
-            conteudo: action.payload.conteudo
-          }
+      case 'FORM_REQUEST_SUCCESS':
+        return window.location.reload()            
+      default:
+        return state;
     }
 }
