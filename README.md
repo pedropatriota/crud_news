@@ -1,10 +1,10 @@
 Este projeto tem como objetivo listar, adicionar, editar ou deletar (CRUD) notícias.
 
-### Metodologia utilizada
+## Metodologia utilizada:
 
 O projeto foi criado utilizando create-react-app.
 
-## Campos existente:
+### Campos existentes
 
 Título, Data de publicação e Conteúdo.
 
