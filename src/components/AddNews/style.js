@@ -31,10 +31,8 @@ export const Wrapper = styled.div`
             width: 100%;
             border: 1px solid #cdcdcd;
             border-radius: 5px;
-            padding: 5px;            
-            /* &[name='data']{
-                display: none;
-            } */
+            padding: 5px;      
+            
             &:hover{
                 background: #f7f4f4;
             }
