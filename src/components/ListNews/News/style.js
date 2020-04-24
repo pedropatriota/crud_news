@@ -11,6 +11,7 @@ export const LeftWrapper = styled.div`
 export const NewsTitle = styled.div`
   display:flex;
   height: 75px;  
+  text-align: center;
   justify-content: space-evenly;
   align-items:center;
   flex-direction:column; 
