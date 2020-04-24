@@ -1,29 +1,32 @@
 import { takeLatest, call, put, all } from "redux-saga/effects";
 import api from '../../services/api';
 import { editionSuccess, editionFailure } from "../actions/actionEdition";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  
 
-export function* EditionNews({ payload }) {
+export function* editionNews({ payload }) {
   try {    
     
-    const { title, content, createdAt} = payload.data 
-    const { i } = payload.i   
-
-    yield call(api.put, `crud/${i}`, {
-      title, 
-      content, 
-      createdAt
-    });
+    const { data, i } = payload
+    const { titulo, conteudo, publicacao } = data    
     
-    yield put(editionSuccess())
+    yield call(api.put, `crud/${i}`, {
+      titulo,
+      conteudo,
+      publicacao      
+    });
+   
+    yield put(editionSuccess())  
   }    
     catch (err) {
+      toast.error('OCORREU UM ERRO, TENTE NOVAMENTE')
       yield put(editionFailure());
     }    
   } 
   
  
 export default all([
-  takeLatest("EDITION_REQUEST", EditionNews) 
+  takeLatest("EDITION_REQUEST", editionNews) 
 ]);
  

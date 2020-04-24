@@ -13,11 +13,12 @@ export const ContentWrapper = styled.div`
 export const Content = styled.div`
   width: 80%; 
   height:150px;
+  background:#fff;
   border-radius: 5px;
   border: 1px solid #cdcdcd;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start; 
-  margin-bottom: 10px; 
+  margin-bottom: 10px;   
 `;  
 

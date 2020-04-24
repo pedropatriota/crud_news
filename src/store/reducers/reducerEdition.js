@@ -1,14 +1,14 @@
-import { startEdition } from "../actions/actionEdition";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const INITIAL_STATE = { 
   show: false,
-  i:''
+  i:'' 
 };
  
 export default function listNews(state = INITIAL_STATE, action) {
   switch (action.type) {    
-    case 'START_EDITION': 
-      console.log(action.payload.i)
+    case 'START_EDITION':      
       return{
         ...state,
         i: action.payload.i,
@@ -24,12 +24,18 @@ export default function listNews(state = INITIAL_STATE, action) {
 
     case 'EDITION_REQUEST':        
       return {
-        ...startEdition,
+        ...state,
+        data: action.payload.data,
         i: action.payload.i
       } 
 
     case 'EDITION_SUCCESS':        
-      return alert('ATUALIZADO COM SUCESSO')      
+      return (  
+        toast.info('NOTÍCIA ATUALIZADO COM SUCESSO'),     
+        setTimeout(()=>{
+          window.location.reload()
+        },3000)  
+      )
               
     default:
       return state;

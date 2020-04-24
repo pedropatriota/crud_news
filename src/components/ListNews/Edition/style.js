@@ -20,11 +20,26 @@ export const InputContent = styled(UnformContent)`
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 5px;
-  overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 12px;
+  } 
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;
+  } 
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  }
   &:hover{
     background: #f7f4f4;
   }
 `;
+
+
 
 export const Input = styled(UnformInput)`
   height: 25px;

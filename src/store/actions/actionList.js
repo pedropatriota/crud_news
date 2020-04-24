@@ -26,6 +26,12 @@ export function listRequest() {
     }
   }
 
+  export function listDeleteFailure(){
+    return{
+      type: 'LIST_DELETE_FAILURE'      
+    }
+  } 
+
   
 
  

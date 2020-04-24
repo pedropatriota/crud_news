@@ -6,6 +6,7 @@ import { LeftWrapper, NewsTitle, NewsOptions, NewsContent} from './style';
 
 
 const News = (props)=>{
+  const{ bg }= props
   const dispatch = useDispatch()
 
   return(
@@ -17,7 +18,7 @@ const News = (props)=>{
       </NewsTitle> 
 
       <NewsOptions>             
-        <button name='editar' onClick={()=> dispatch(startEdition((props.newsId)))}> editar</button>
+        <button bg={bg} name='editar' onClick={()=> dispatch(startEdition((props.newsId)))}> editar</button>
         <button name='deletar' onClick={()=> dispatch(listDelete(props.newsId))}> deletar </button>                        
       </NewsOptions>
     </LeftWrapper>

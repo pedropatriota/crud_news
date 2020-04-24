@@ -1,7 +1,8 @@
 import { takeLatest, call, put, all } from "redux-saga/effects";
 import api from '../../services/api';
-import { listSuccess, listFailure } from "../actions/actionList";
- 
+import { listSuccess, listFailure, listDeleteFailure } from "../actions/actionList";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function* listNews() {
   try { 
@@ -11,16 +12,19 @@ export function* listNews() {
     yield put(listSuccess(news));  
     }    
     catch (err) {
-      yield put(listFailure());
+      toast.error('OCORREU UM ERRO, TENTE NOVAMENTE')
+      yield put(listFailure(err));      
     }    
   } 
 
   function* listDelete ({ payload }) {
     const{ index }= payload;
     try {      
-      yield call(api.delete, `crud/${index}`);      
-    } catch (err) {
-      console.log(err)
+      yield call(api.delete, `crud/${index}`);
+    } 
+    catch (err) {
+      toast.error('OCORREU UM ERRO, TENTE NOVAMENTE')
+      yield put(listDeleteFailure(err))
     }
   }
 

@@ -15,7 +15,8 @@ export default function listNews(state = INITIAL_STATE, action) {
       return {
         ...state,
         news: state.news.filter(item => item.id !== action.payload.index)
-      };    
+      };     
+         
               
     default:
       return state;

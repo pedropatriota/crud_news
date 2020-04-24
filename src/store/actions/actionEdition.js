@@ -22,7 +22,7 @@ export function editionRequest(data, i) {
   return {
     type: "EDITION_REQUEST",
     payload: {     
-      data,
+      data,      
       i
     }     
   }

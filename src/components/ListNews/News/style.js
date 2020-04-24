@@ -37,8 +37,8 @@ export const NewsOptions = styled.div`
     color: #fff;
     font-weight: bold;
     &:first-child{
-      background: #54ad5f;
-      margin-right: 10px;
+    background: ${props=> props.bg || '#54ad5f'};
+    margin-right: 10px;
       &:hover{
         background: #5ab966;
       }
@@ -60,5 +60,18 @@ export const NewsContent = styled.div`
   border-left: 1px solid #cdcdcd;
   text-align: left;
   font-size: 13px;
-  overflow: hidden;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 12px !important;
+  } 
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;  
+    border-radius: 10px !important;
+  } 
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important; 
+  }
 `;        
