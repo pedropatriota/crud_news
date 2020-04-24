@@ -1,17 +1,14 @@
 Este projeto tem como objetivo listar, adicionar, editar ou deletar (CRUD) notícias.
 
-## Campos existente:
-
-Título
-Data de publicação
-Conteúdo
-
 ### Metodologia utilizada
 
 O projeto foi criado utilizando create-react-app.
 
-### Estilização
+## Campos existente:
 
+Título, Data de publicação e Conteúdo.
+
+### Estilização
 Todo o projeto foi estilizado com styled-components. Não foi utilizado nenhum framework css.
 
 ### API
