@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   i:'' 
 };
  
-export default function listNews(state = INITIAL_STATE, action) {
+export default function listEdition(state = INITIAL_STATE, action) {
   switch (action.type) {    
     case 'START_EDITION':      
       return{

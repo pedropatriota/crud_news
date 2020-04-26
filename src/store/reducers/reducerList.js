@@ -1,4 +1,4 @@
-const INITIAL_STATE = {
+const INITIAL_STATE = {  
   news:[],
   index: ''  
 };
@@ -15,8 +15,7 @@ export default function listNews(state = INITIAL_STATE, action) {
       return {
         ...state,
         news: state.news.filter(item => item.id !== action.payload.index)
-      };     
-         
+      };         
               
     default:
       return state;

@@ -14,7 +14,7 @@ function App() {
       <ToastContainer autoClose={3000}/>
       <Header />
       <AddNews />
-      <ListNews />
+      <ListNews />      
     </Provider>
   );
 }

@@ -9,12 +9,12 @@ export function* editionNews({ payload }) {
   try {    
     
     const { data, i } = payload
-    const { titulo, conteudo, publicacao } = data    
+    const { titulo, conteudo } = data    
     
     yield call(api.put, `crud/${i}`, {
       titulo,
       conteudo,
-      publicacao      
+      publicacao: new Date().toLocaleString()    
     });
    
     yield put(editionSuccess())  

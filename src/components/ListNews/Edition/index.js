@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { closeEdition, editionRequest } from '../../../store/actions/actionEdition';
 import { LeftWrapper, NewsTitle, NewsOptions, NewsContent } from '../News/style';
-import { Form, InputContent, Input } from './style'
+import { Form, InputContent, InputTitle, InputPublish } from './style'
 
 const Edition = (props)=>{
   const dispatch = useDispatch()
@@ -15,8 +15,8 @@ const Edition = (props)=>{
   <Form onSubmit={handleSubmit}>
     <LeftWrapper>
       <NewsTitle>
-        <Input name='titulo' type='text' />
-        <Input name='publicacao' value={new Date().toLocaleString()}type='text' disabled/>                            
+        <InputTitle name='titulo' type='text' />
+        <InputPublish name='publicacao' value={new Date().toLocaleString()}type='text' disabled/>                            
       </NewsTitle> 
 
       <NewsOptions>             

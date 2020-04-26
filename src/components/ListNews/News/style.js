@@ -15,7 +15,8 @@ export const NewsTitle = styled.div`
   justify-content: space-evenly;
   align-items:center;
   flex-direction:column; 
-  h2{
+  padding-top:5px;
+  h3{
     text-transform:uppercase;
   }
 `;
@@ -38,7 +39,7 @@ export const NewsOptions = styled.div`
     color: #fff;
     font-weight: bold;
     &:first-child{
-    background: ${props=> props.bg || '#54ad5f'};
+    background: #54ad5f;
     margin-right: 10px;
       &:hover{
         background: #5ab966;

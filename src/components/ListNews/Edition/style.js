@@ -1,7 +1,8 @@
 import styled from "styled-components"
 import { Form as Unform } from '@rocketseat/unform';
 import { Input as UnformContent } from '@rocketseat/unform';
-import { Input as UnformInput } from '@rocketseat/unform';
+import { Input as UnformTitle } from '@rocketseat/unform';
+import { Input as UnformPublish } from '@rocketseat/unform';
 
 export const Form = styled(Unform)`
   width: 100%; 
@@ -41,9 +42,21 @@ export const InputContent = styled(UnformContent)`
 
 
 
-export const Input = styled(UnformInput)`
+export const InputTitle = styled(UnformTitle)`
   height: 25px;
   width: 100%;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+  padding: 5px;
+  &:hover{
+    background: #f7f4f4;
+  }
+`;
+
+export const InputPublish = styled(UnformPublish)`
+  height: 25px;
+  text-align: center;
+  width: 150px;
   border: 1px solid #cdcdcd;
   border-radius: 5px;
   padding: 5px;

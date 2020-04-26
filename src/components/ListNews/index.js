@@ -17,6 +17,7 @@ const ListNews = ()=> {
       return [...state.list.news]
     });
 
+    
     const show = useSelector(state =>{                 
       return state.edition.show
     });

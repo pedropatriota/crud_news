@@ -7,12 +7,12 @@ export function* formNews({ payload }) {
   try { 
     
     const{data} = payload
-    const { titulo, conteudo, publicacao } = data    
+    const { titulo, conteudo } = data    
 
     yield call(api.post, "crud", {
       titulo,
       conteudo,
-      publicacao
+      publicacao: new Date().toLocaleString() 
     });
     
     yield put(formRequestSuccess())
